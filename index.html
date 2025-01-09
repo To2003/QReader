@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escáner de QR</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="mainContainer">
+    <h1>Escanea tu QR</h1>
+    <p>Sube una imagen con un código QR para analizarla.</p>
+    <form id="qr-form">
+      <input type="file" id="qr-input" accept="image/*" class="fileInput">
+      <button type="button" id="scan-btn" class="scanButton">Escanear QR</button>
+    </form>
+    
+    <!-- Aquí se mostrará la imagen seleccionada -->
+    <div id="image-preview" class="imagePreview hidden">
+      <img id="selected-image" src="" alt="Imagen seleccionada">
+    </div>
+
+    <div id="result" class="result hidden">
+      <h2>Resultado:</h2>
+      <p class="qrResult">No se ha escaneado ningún código aún.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
