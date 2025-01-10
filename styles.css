@@ -95,6 +95,35 @@ button:hover {
   word-wrap: break-word;
 }
 
+
+/* Ocultar texto accesible */
+.hiddenLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Mejora visual del formulario */
+.fileInput {
+  cursor: pointer;
+}
+
+.scanButton {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.result h2 {
+  font-size: 1.2rem;
+  color: #007B55;
+  margin-bottom: 10px;
+}
+
+
 /* Tablets (pantallas de 768px o más) */
 @media (min-width: 768px) {
   .mainContainer {

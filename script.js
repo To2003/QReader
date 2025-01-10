@@ -68,3 +68,21 @@ scanButton.addEventListener('click', () => {
 
   reader.readAsDataURL(file);
 });
+
+
+// Validar formato del archivo seleccionado
+fileInput.addEventListener('change', () => {
+  const allowedFormats = ['image/png', 'image/jpeg', 'image/jpg'];
+  if (!allowedFormats.includes(fileInput.files[0].type)) {
+    alert('Por favor, suba una imagen en formato PNG o JPG.');
+    fileInput.value = ''; // Resetear input
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    selectedImage.src = event.target.result;
+    imagePreview.style.display = 'block';
+  };
+  reader.readAsDataURL(fileInput.files[0]);
+});
+

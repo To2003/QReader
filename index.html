@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escáner de QR</title>
+  <meta name="description" content="Aplicación para escanear códigos QR directamente desde imágenes. Suba su imagen para analizarla rápidamente.">
+  <meta name="keywords" content="escáner QR, lector QR, código QR, analizar QR, subir imagen QR">
+  <meta name="author" content="Tu Nombre">
   <link rel="stylesheet" href="styles.css">
+  <title>Escáner de QR | Fácil y Rápido</title>
 </head>
 <body>
-  <div class="mainContainer">
+  <div class="mainContainer" role="main">
     <h1>Escanea tu QR</h1>
-    <p>Sube una imagen con un código QR para analizarla.</p>
-    <form id="qr-form" class="qrForm">
-      <input type="file" id="qr-input" accept="image/*" class="fileInput">
+    <p class="instructions">Sube una imagen con un código QR para analizarla.</p>
+    <form id="qr-form" class="qrForm" aria-labelledby="qr-input">
+      <label for="qr-input" class="hiddenLabel">Subir imagen de QR</label>
+      <input type="file" id="qr-input" accept="image/*" class="fileInput" aria-describedby="instructions">
       <button type="button" id="scan-btn" class="scanButton">Escanear QR</button>
     </form>
     
-    <!-- Aquí se mostrará la imagen seleccionada -->
-    <div id="image-preview" class="imagePreview hidden">
-      <img id="selected-image" src="" alt="Imagen seleccionada">
+    <!-- Vista previa -->
+    <div id="image-preview" class="imagePreview hidden" aria-live="polite">
+      <img id="selected-image" src="" alt="Vista previa de la imagen seleccionada">
     </div>
 
-    <div id="result" class="result hidden">
+    <!-- Resultado -->
+    <div id="result" class="result hidden" aria-live="polite">
       <h2>Resultado:</h2>
       <p class="qrResult">No se ha escaneado ningún código aún.</p>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
